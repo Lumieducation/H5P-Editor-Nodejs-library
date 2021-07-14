@@ -102,7 +102,7 @@
         "jest": "26.6.0",
         "json-autotranslate": "1.9.0",
         "lerna": "4.0.0",
-        "prettier": "2.2.1",
+        "prettier": "2.3.2",
         "puppeteer": "10.1.0",
         "remark-cli": "9.0.0",
         "remark-validate-links": "10.0.4",
