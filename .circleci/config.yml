@@ -5,7 +5,7 @@ orbs:
 jobs:
     install-build:
         docker:
-            - image: circleci/node:15
+            - image: circleci/node:16
         steps:
             - checkout         
             - restore_cache:
@@ -61,7 +61,7 @@ jobs:
 
     lint:
         docker:
-            - image: circleci/node:15
+            - image: circleci/node:16
         steps:
             - checkout
             - attach_workspace:
@@ -70,7 +70,7 @@ jobs:
 
     format:
         docker:
-            - image: circleci/node:15
+            - image: circleci/node:16
         steps:
             - checkout
             - attach_workspace:
@@ -79,7 +79,7 @@ jobs:
 
     unit-tests:
         docker:
-            - image: circleci/node:15-browsers
+            - image: circleci/node:16-browsers
               environment:
                   NODE_ENV: development
         steps:
@@ -93,7 +93,7 @@ jobs:
 
     integration-tests:
         docker:
-            - image: circleci/node:15-browsers
+            - image: circleci/node:16-browsers
         steps:
             - checkout
             - attach_workspace:
@@ -105,7 +105,7 @@ jobs:
 
     html-exporter-tests:
         docker:
-            - image: circleci/node:15-browsers
+            - image: circleci/node:16-browsers
         steps:
             - checkout
             - attach_workspace:
@@ -118,7 +118,7 @@ jobs:
 
     e2e-tests:
         docker:
-            - image: circleci/node:15-browsers
+            - image: circleci/node:16-browsers
         steps:
             - checkout
             - attach_workspace:
@@ -127,7 +127,7 @@ jobs:
 
     db-tests:
         docker:
-            - image: circleci/node:15
+            - image: circleci/node:16
             - image: circleci/mongo:latest
               environment:
                   MONGO_INITDB_ROOT_USERNAME: root
@@ -148,7 +148,7 @@ jobs:
 
     release:
         docker:
-            - image: 'circleci/node:15'
+            - image: 'circleci/node:16'
         steps:
             - checkout
             - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
